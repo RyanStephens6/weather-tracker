@@ -20,8 +20,23 @@ function fetchApis(location) {
                     return response.json();
                 })
                 .then(function (data) {
-                    console.log(data);
-                    
+                    for(var i=1; i < 5; i++) {
+                        var date = data.list[i*8].dt_txt;
+                        var wind = data.list[i*8].wind.speed;
+                        var weatherData = data.list[i*8].main;
+                        updateForecast(i, date, weatherData.temp, wind, weatherData.humidity);
+                    }
+                    var date = data.list[39].dt_txt;
+                    var wind = data.list[39].wind.speed;
+                    var weatherData = data.list[39].main;
+                    updateForecast(5, date, weatherData.temp, wind, weatherData.humidity);
                 })
         })
+}
+
+function updateForecast(day, date, temp, wind, humidity) {
+    $("#day"+day).text(date);
+    $("#temp"+day).text("Temp: "+ temp);
+    $("#wind"+day).text("Wind: "+wind);
+    $("#humidity"+day).text("Humidity: "+humidity);
 }
