@@ -4,3 +4,24 @@ header {
     text-align: center;
     padding: 15px;
 }
+
+main {
+    display: flex;
+}
+
+.search-box{
+    display: flex;
+    margin-left: 30px;
+    max-width: 200px;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.searchbar{
+    padding: 5px 10px;
+}
+
+.weather-data{
+    display:flex;
+    justify-content: flex-end;
+}
