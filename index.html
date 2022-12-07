@@ -13,15 +13,17 @@
         <main>
             <div class="search-box">
                 <h2>Search for a city:</h2>
-                <input class="searchbar" type="text" placeholder="Enter a city">
-                <ul>
-
-                </ul>
+                <form>
+                    <input id="search" class="searchbar" type="text" placeholder="Enter a city">
+                    <input class="submitButton" type="submit" value="Submit">
+                </form>
+                <ul id="searchHistory"></ul>
             </div>
             <div class="weather-data">
                 <h2>Today's weather</h2>
             </div>
         </main>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </html>
