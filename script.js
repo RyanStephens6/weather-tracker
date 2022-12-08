@@ -20,7 +20,7 @@ function fetchApis(location) {
                     return response.json();
                 })
                 .then(function (data) {
-                    for(var i=1; i < 5; i++) {
+                    for(var i=0; i < 5; i++) {
                         var date = data.list[i*8].dt_txt.split(' ');
                         var wind = data.list[i*8].wind.speed;
                         var weatherData = data.list[i*8].main;
