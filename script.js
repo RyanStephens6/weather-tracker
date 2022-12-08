@@ -3,6 +3,11 @@ submitButton.click(function(e) {
     e.preventDefault();
     var searchEntry = $(this).prev().val()
     fetchApis(searchEntry);
+    addToLocalStorage(searchEntry);
+    var searchHistory = document.getElementById("searchHistory");
+    let li = document.createElement("li");
+    li.innerText = searchEntry;
+    searchHistory.appendChild(li);
 })
 
 function fetchApis(location) {
@@ -40,3 +45,26 @@ function updateForecast(day, date, temp, wind, humidity) {
     $("#wind"+day).text("Wind: "+wind+" MPH");
     $("#humidity"+day).text("Humidity: "+humidity+"%");
 }
+
+function addToLocalStorage(searchTerm) {
+    var storageValue = localStorage.getItem("searchHistory");
+    if(storageValue == null) {
+        localStorage.setItem("searchHistory", searchTerm)
+    } else {
+        var storageArray = storageValue.split();
+        storageArray.push(searchTerm);
+        localStorage.setItem("searchHistory", storageArray.toString());
+    }
+}
+
+function updateHistory() {
+    var history = localStorage.getItem("searchHistory");
+    var historyArr = history.split(',');
+    var searchHistory = document.getElementById("searchHistory");
+    for(let i=0; i<historyArr.length; i++) {
+        let li = document.createElement("li");
+        li.innerText = historyArr[i];
+        searchHistory.appendChild(li);
+    }
+}
+updateHistory();
