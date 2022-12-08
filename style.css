@@ -1,5 +1,5 @@
 header {
-    background-image: linear-gradient(to right,rgb(61, 0, 125), blue);
+    background-image: linear-gradient(to right,blue, rgb(34, 0, 155));
     color: white;
     text-align: center;
     padding: 15px;
@@ -25,6 +25,7 @@ main {
     display:flex;
     justify-content: flex-end;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 .today {
@@ -35,7 +36,7 @@ main {
     outline-width: 2px;
     border-radius: 10px;
     padding-left: 50px;
-    background-color:rgb(180, 242, 242);
+    background-image:linear-gradient(to right, rgb(208, 235, 235),  rgb(174, 221, 240));
 }
 
 .forecastCard {
@@ -43,8 +44,7 @@ main {
     flex-direction: column;
     padding: 10px;
     margin: 10px;
-    background-image: linear-gradient(to right, rgb(0, 15, 125), blue);
-    color: white;
+    background-image: linear-gradient(to right, rgb(208, 235, 235), rgb(174, 221, 240));
     outline: solid;
     outline-color: black;
     outline-width: 2px;
@@ -56,4 +56,13 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     margin-left:50px;
+}
+
+#searchHistory li {
+    list-style: none;
+    background-color: gray;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3px;
+    color: white;
 }
