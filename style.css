@@ -24,4 +24,36 @@ main {
 .weather-data{
     display:flex;
     justify-content: flex-end;
+    flex-direction: column;
+}
+
+.today {
+    display: block;
+    margin-left: 50px;
+    outline: solid;
+    outline-color: black;
+    outline-width: 2px;
+    border-radius: 10px;
+    padding-left: 50px;
+    background-color:rgb(180, 242, 242);
+}
+
+.forecastCard {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    background-image: linear-gradient(to right, rgb(0, 15, 125), blue);
+    color: white;
+    outline: solid;
+    outline-color: black;
+    outline-width: 2px;
+    border-radius: 5px;
+}
+
+.forecastSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:50px;
 }
